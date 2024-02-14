@@ -14,6 +14,11 @@ public class Main {
             addressBook.editPersonDetails();
         }
         else System.out.println("No Changes Done");
+        System.out.println("Want to Delete Press 1 or else 0: ");
+        if(input.nextInt() == 1){
+            addressBook.deleteContact();
+        }
+        else System.out.println("No Changes done");
 
     }
 }
