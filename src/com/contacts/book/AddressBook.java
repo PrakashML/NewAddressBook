@@ -1,16 +1,26 @@
 package com.contacts.book;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class AddressBook {
     ArrayList<Contact> contacts = new ArrayList<>();
+    HashMap<String,Contact> contactHashMap = new HashMap<>();
+
+    HashMap<String,Contact> contactHashMap2 = new HashMap<>();
     public void getContactDetails(){
         System.out.println("Enter details: ");
         Contact person = new Contact();
         person.getPersonDetails();
         contacts.add(person);
         System.out.println(contacts);
+    }
+
+    public void displayContact(){
+        for (Contact contact:contacts) {
+            System.out.println(contact);
+        }
     }
 
     public void editPersonDetails(){
