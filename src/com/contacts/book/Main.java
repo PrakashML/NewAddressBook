@@ -8,7 +8,16 @@ public class Main {
         System.out.println("Welcome To AddressBook");
         Scanner input = new Scanner(System.in);
         AddressBook addressBook = new AddressBook();
-        addressBook.getContactDetails();
+        while(true){
+            System.out.println("Want to add new contact? Press1 or 0");
+            int add = input.nextInt();
+            if(add == 1){
+                addressBook.getContactDetails();
+            }
+            else break;
+        }
+
+
         System.out.println("Want to Edit Press 1 or else 0: ");
         if(input.nextInt() == 1){
             addressBook.editPersonDetails();
