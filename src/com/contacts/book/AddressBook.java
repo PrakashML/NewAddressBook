@@ -84,14 +84,15 @@ public class AddressBook {
         System.out.println(contacts);
     }
 
-    public void searchByCityName(String cityName){
+    public void searchByCityName(String cityName,String personName){
+
         for (Contact contact : contacts) {
             if(contact.getCity().equals(cityName)){
                 contactHashMap.put(cityName,contact);
             }
         }
-
-        contacts.stream().filter(t -> t.getCity().equals(cityName)).forEach(x -> System.out.println(x));
+        Predicate<Contact> contactPredicate = t -> t.getCity().equals(cityName);
+        contacts.stream().filter(contactPredicate).forEach(x -> System.out.println(x));
         System.out.println(contactHashMap.keySet());
     }
 
