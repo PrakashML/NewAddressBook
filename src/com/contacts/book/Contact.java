@@ -1,5 +1,7 @@
 package com.contacts.book;
 
+import java.util.Scanner;
+
 public class Contact {
     private String firstName;
     private String lastName;
@@ -86,5 +88,43 @@ public class Contact {
         this.zipcode = zipcode;
         this.phoneNumber = phoneNumber;
         this.email = email;
+    }
+
+    public void getPersonDetails(){
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter First Name : ") ;
+        firstName = input.next();
+        System.out.print("Enter Lat Name : ");
+        lastName = input.next();
+        System.out.print("Enter Address : ");
+        address = input.next();
+        input.nextLine();
+        System.out.print("Enter City : ");
+        city = input.next();
+        input.nextLine();
+        System.out.print("Enter State : ");
+        state = input.next();
+        input.nextLine();
+        System.out.print("Enter Zipcode : ");
+        zipcode = input.nextInt();
+        input.nextLine();
+        System.out.print("Enter Phone number : ");
+        phoneNumber = input.nextLong();
+        System.out.print("Enter Email ID : ");
+        email = input.next();
+    }
+
+    @Override
+    public String toString(){
+        return  "Contact{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", address='" + address + '\'' +
+                ", city='" + city + '\'' +
+                ", state='" + state + '\'' +
+                ", zipcode=" + zipcode +
+                ", phoneNumber=" + phoneNumber +
+                ", email='" + email + '\'' +
+                '}';
     }
 }
