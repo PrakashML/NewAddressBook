@@ -18,6 +18,7 @@ public class Main {
             System.out.print("4.Delete Contact\t");
             System.out.print("5.Display available Address Books\t");
             System.out.print("6.Add new Address Book\n");
+            System.out.print("7.Search a person by City\t");
             option = input.nextInt();
             switch (option) {
 
@@ -81,6 +82,19 @@ public class Main {
                         System.out.println("Address Book does not exist");
                         AddressBook addressBook = new AddressBook();
                         dictionary.put(addressBookName4, addressBook);
+                    }
+                    break;
+                case 7 :
+                    System.out.println("Enter name of address book in which you want to search contact by city name : ");
+                    String addressBookName5 = input.next();
+                    if(dictionary.containsKey(addressBookName5)){
+                        System.out.println("Enter name of city : ");
+                        String cityName = input.next();
+                        AddressBook addressBook = dictionary.get(addressBookName5);
+                        addressBook.searchByCityName(cityName) ;
+                    }
+                    else {
+                        System.out.println("Address Book does not exist");
                     }
                     break;
             }

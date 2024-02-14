@@ -3,6 +3,7 @@ package com.contacts.book;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
+import java.util.function.Predicate;
 
 public class AddressBook {
     ArrayList<Contact> contacts = new ArrayList<>();
@@ -81,6 +82,17 @@ public class AddressBook {
             }
         }
         System.out.println(contacts);
+    }
+
+    public void searchByCityName(String cityName){
+        for (Contact contact : contacts) {
+            if(contact.getCity().equals(cityName)){
+                contactHashMap.put(cityName,contact);
+            }
+        }
+
+        contacts.stream().filter(t -> t.getCity().equals(cityName)).forEach(x -> System.out.println(x));
+        System.out.println(contactHashMap.keySet());
     }
 
     public void deleteContact(){
