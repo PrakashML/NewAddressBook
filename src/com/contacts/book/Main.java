@@ -9,5 +9,11 @@ public class Main {
         Scanner input = new Scanner(System.in);
         AddressBook addressBook = new AddressBook();
         addressBook.getContactDetails();
+        System.out.println("Want to Edit Press 1 or else 0: ");
+        if(input.nextInt() == 1){
+            addressBook.editPersonDetails();
+        }
+        else System.out.println("No Changes Done");
+
     }
 }
