@@ -10,11 +10,20 @@ public class AddressBook {
 
     HashMap<String,Contact> contactHashMap2 = new HashMap<>();
     public void getContactDetails(){
-        System.out.println("Enter details: ");
+        System.out.println("Enter details : ");
         Contact person = new Contact();
         person.getPersonDetails();
-        contacts.add(person);
-        System.out.println(contacts);
+        int present = 0;
+        for (Contact contact :contacts) {
+            if (contact.getFirstName().equals(person.getFirstName())){
+                present = 1;
+                System.out.println("Person already exist");
+                break;
+            }
+        }
+        if (present==0){
+            contacts.add(person);
+        }
     }
 
     public void displayContact(){
