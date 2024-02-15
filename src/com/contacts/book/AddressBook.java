@@ -115,7 +115,7 @@ public class AddressBook {
         System.out.println(contacts);
     }
 
-    public void sortByCity(){
+    public void sortByPerson(){
         Comparator<Contact> contactComparable = (a, b) -> a.compareTo(b);
         contacts.stream().sorted(contactComparable).forEach(x -> System.out.println(x));
     }
