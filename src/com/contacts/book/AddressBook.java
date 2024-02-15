@@ -1,6 +1,7 @@
 package com.contacts.book;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Scanner;
 import java.util.function.Predicate;
@@ -112,5 +113,10 @@ public class AddressBook {
             }
         }
         System.out.println(contacts);
+    }
+
+    public void sortByCity(){
+        Comparator<Contact> contactComparable = (a, b) -> a.compareTo(b);
+        contacts.stream().sorted(contactComparable).forEach(x -> System.out.println(x));
     }
 }

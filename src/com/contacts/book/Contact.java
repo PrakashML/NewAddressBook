@@ -2,7 +2,7 @@ package com.contacts.book;
 
 import java.util.Scanner;
 
-public class Contact {
+public class Contact implements Comparable{
     private String firstName;
     private String lastName;
     private String address;
@@ -126,5 +126,12 @@ public class Contact {
                 ", phoneNumber=" + phoneNumber +
                 ", email='" + email + '\'' +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        Contact contact = (Contact) o;
+        int compareResult = this.city.compareTo(contact.city);
+        return compareResult;
     }
 }
