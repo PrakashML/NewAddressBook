@@ -85,15 +85,18 @@ public class AddressBook {
     }
 
     public void searchByCityName(String cityName,String personName){
-
+        int count = 0;
         for (Contact contact : contacts) {
             if(contact.getCity().equals(cityName)){
                 contactHashMap.put(cityName,contact);
             }
+            if(contact.getFirstName().equals(personName)){
+                count+=1;
+            }
         }
-        Predicate<Contact> contactPredicate = t -> t.getCity().equals(cityName);
-        contacts.stream().filter(contactPredicate).forEach(x -> System.out.println(x));
+        contacts.stream().filter(t -> t.getCity().equals(cityName)).forEach(x -> System.out.println(x));
         System.out.println(contactHashMap.keySet());
+        System.out.println("Number of persons of same name : " + count );
     }
 
     public void deleteContact(){
